@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Cityline Ticket Input",
+    "version": "1.0",
+    "description": "",
+    "permissions": [
+      "activeTab",
+      "scripting"
+    ],
+    "host_permissions": [
+        "https://venue.cityline.com/*"
+    ],
+    "action": {
+      "default_popup": "index.html"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+          "matches": ["https://venue.cityline.com/*"],
+          "js": ["content.js"]
+        }
+      ]
+  }
